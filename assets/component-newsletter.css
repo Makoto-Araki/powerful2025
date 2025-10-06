@@ -69,3 +69,12 @@
 .newsletter-form__button .icon {
   width: 1.5rem;
 }
+
+/* --- Custom override for footer newsletter label --- */
+.footer-block--newsletter .field__label {
+  color: transparent; /* 元テキストを透明に */
+}
+.footer-block--newsletter .field__label::before {
+  content: 'Input your Email';
+  color: red;
+}

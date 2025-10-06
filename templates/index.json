@@ -14,52 +14,120 @@
       "blocks": {
         "slide-0": {
           "type": "slide",
+          "disabled": true,
           "settings": {
-            "heading_size": "h1",
+            "image": "shopify://shop_images/30forecast9101_9_b185d181-12bd-4a1d-9fff-a66162657631.webp",
+            "image_overlay_opacity": 0,
+            "heading": "Image slides",
+            "heading_size": "h2",
             "subheading": "",
+            "button_label": "Button label",
             "link": "shopify://collections",
             "button_style_secondary": false,
-            "box_align": "middle-right",
             "show_text_box": false,
+            "box_align": "middle-right",
             "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
+        "slide_gehabV": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/30forecast9101_10_1f25b87f-981d-4aa0-a12c-a7a397dc741d.webp",
             "image_overlay_opacity": 0,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
+            "heading": "Image slides",
+            "heading_size": "h2",
+            "subheading": "",
+            "button_label": "Button label",
+            "link": "shopify://collections",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-right",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_YhNnTD": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/30forecast9101_11_42c7bada-eda1-4166-9080-f11763b574a8.webp",
+            "image_overlay_opacity": 0,
+            "heading": "Image slides",
+            "heading_size": "h2",
+            "subheading": "",
+            "button_label": "Button label",
+            "link": "shopify://collections",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-right",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_yUPQiT": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/30forecast9101_12_27bd757a-c45e-482b-b3e4-27e9d2c0bfdf.webp",
+            "image_overlay_opacity": 0,
+            "heading": "Image slides",
+            "heading_size": "h2",
+            "subheading": "",
+            "button_label": "Button label",
+            "link": "shopify://collections",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-right",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
           }
         }
       },
       "block_order": [
-        "slide-0"
+        "slide-0",
+        "slide_gehabV",
+        "slide_YhNnTD",
+        "slide_yUPQiT"
       ],
+      "disabled": true,
       "settings": {
-        "layout": "full_bleed",
+        "layout": "grid",
         "slide_height": "small",
-        "slider_visual": "dots",
-        "auto_rotate": false,
+        "slider_visual": "numbers",
+        "auto_rotate": true,
         "change_slides_speed": 5,
         "image_behavior": "none",
-        "show_text_below": true
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
     "all-products": {
       "type": "featured-collection",
       "settings": {
+        "collection": "トートバッグ",
+        "products_to_show": 12,
+        "title": "Featured collections",
         "heading_size": "h2",
+        "description": "",
         "show_description": true,
         "description_style": "subtitle",
-        "collection": "all",
-        "products_to_show": 24,
         "columns_desktop": 6,
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
@@ -72,36 +140,54 @@
       "blocks": {
         "collection-0": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
-            "collection": ""
+            "collection": "バックパック"
+          }
+        },
+        "featured_collection_DkGUTw": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "エコバッグ"
           }
         },
         "collection-1": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
-            "collection": ""
+            "collection": "トートバッグ"
           }
         },
         "collection-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "エコバッグ"
           }
         },
         "collection-3": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "トートバッグ"
+          }
+        },
+        "featured_collection_eePHeA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "バックパック"
           }
         }
       },
       "block_order": [
         "collection-0",
+        "featured_collection_DkGUTw",
         "collection-1",
         "collection-2",
-        "collection-3"
+        "collection-3",
+        "featured_collection_eePHeA"
       ],
       "settings": {
+        "title": "Collections",
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 4,
@@ -118,13 +204,13 @@
       "settings": {
         "image_overlay_opacity": 0,
         "image_height": "small",
-        "desktop_content_position": "top-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
         "image_behavior": "none",
-        "mobile_content_alignment": "center",
+        "desktop_content_position": "top-left",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "",
         "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
         "show_text_below": true
       }
     }
