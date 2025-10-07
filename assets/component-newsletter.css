@@ -76,5 +76,5 @@
 }
 .footer-block--newsletter .field__label::before {
   content: 'Input your Email';
-  color: black;
+  color: orange;
 }
