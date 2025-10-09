@@ -159,7 +159,7 @@ $ vi assets/component-newletter.css
 }
 ----------------------------------------------------------------------
 
-## Shopify ローカル開発モード
+## Shopify ローカルプレビューモード
 $ shopify theme dev --store powerful2025.myshopify.com
 
 コマンドの実行結果
@@ -172,10 +172,20 @@ Preview your theme (t)
 (中略)
 ----------------------------------------------------------------------
 
+## Shopify テーマプッシュ
+$ shopify theme push --store powerful2025.myshopify.com
+
+コマンドの実行結果
+----------------------------------------------------------------------
+?  Select a theme to push to:
+✔  Rise  // 現在、公開中(LIVE)のテーマを選択、本来は別テーマにプッシュして、管理画面上でもプレビューするべきだった…
+
+?  Push theme files to the live theme on powerful2025.myshopify.com?
+✔  Yes, confirm changes
+----------------------------------------------------------------------
+
 ## コミットとリモートリポジトリにプッシュ
 $ git add .
 $ git commit -m 文字色を変更
 $ git push origin main
-
-
 ```
