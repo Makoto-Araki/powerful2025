@@ -221,3 +221,38 @@ $ git push origin main
 1. Rise_20251010_01_edit上で開発
 1. Rise_20251010_01_editをプレビュー
 1. Rise_20251010_01_editを公開
+
+### Admin API アクセストークン取得
+#### Shopify管理画面
+##### 手順01
+![管理画面操作01](images/api_setting_01.png)
+##### 手順02
+![管理画面操作02](images/api_setting_02.png)
+##### 手順03
+![管理画面操作03](images/api_setting_03.png)
+##### 手順04
+![管理画面操作04](images/api_setting_04.png)
+##### 手順05
+![管理画面操作05](images/api_setting_05.png)
+##### 手順06
+![管理画面操作06](images/api_setting_06.png)
+##### 手順07
+![管理画面操作07](images/api_setting_07.png)
+##### 手順08
+![管理画面操作08](images/api_setting_08.png)
+##### 手順09
+![管理画面操作09](images/api_setting_09.png)
+##### 手順10
+![管理画面操作10](images/api_setting_10.png)
+##### 手順11
+![管理画面操作11](images/api_setting_11.png)
+##### 手順12
+![管理画面操作12](images/api_setting_12.png)
+##### 手順13
+![管理画面操作13](images/api_setting_13.png)
+##### 手順14
+![管理画面操作14](images/api_setting_14.png)
+##### 手順15
+![管理画面操作15](images/api_setting_15.png)
+##### 手順16
+- 表示されたアクセストークンを保管する
