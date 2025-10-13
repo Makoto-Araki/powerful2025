@@ -1,10 +1,10 @@
 # Powerful2025 (Shopify - 開発ストア)
-## 環境構築
-### 前提条件
+## 前提条件
 - Shopify Partner アカウント作成
 - 開発ストアを作成済
 - サンプル商品を登録済
 
+## 環境構築
 ### Shopify CLI インストール準備
 ```bash
 ## Ubuntuのバージョン確認(Ubuntu 22.04以上を推奨)
@@ -190,12 +190,12 @@ $ git commit -m 文字色を変更
 $ git push origin main
 ```
 
-### 開発時のテーマ複製の方針
-#### 初期状態
+## 開発時のテーマ複製の方針
+### 初期状態
 ![初期状態](images/develop_doctorine_01.png)
 1. Riseが公開状態
 
-#### 開発案件01
+### 開発案件01
 ![開発案件01](images/develop_doctorine_02.png)
 1. RiseからRise_20251007_01_backupを複製
 1. RiseからRise_20251007_01_editを複製
@@ -206,7 +206,7 @@ $ git push origin main
 ※上記3でliquidファイル編集が必要な案件の場合は、テーマダウンロード後にローカルリポジトリ上で修正、プレビューの確認後にRise_20251007_01_editに反映すること
 ```
 
-#### 開発案件02
+### 開発案件02
 ![開発案件02](images/develop_doctorine_03.png)
 1. Rise_20251007_01_editからRise_20251007_02_backupを複製
 1. Rise_20251007_01_editからRise_20251007_02_editを複製
@@ -214,7 +214,7 @@ $ git push origin main
 1. Rise_20251007_02_editをプレビュー
 1. Rise_20251007_02_editを公開
 
-#### 開発案件03
+### 開発案件03
 ![開発案件03](images/develop_doctorine_04.png)
 1. Rise_20251007_02_editからRise_20251010_01_backupを複製
 1. Rise_20251007_02_editからRise_20251010_01_editを複製
@@ -222,37 +222,37 @@ $ git push origin main
 1. Rise_20251010_01_editをプレビュー
 1. Rise_20251010_01_editを公開
 
-### Admin API アクセストークン取得
-#### Shopify管理画面
-##### 手順01
+## Admin API アクセストークン取得
+### Shopify管理画面
+#### 手順01
 ![管理画面操作01](images/api_setting_01.png)
-##### 手順02
+#### 手順02
 ![管理画面操作02](images/api_setting_02.png)
-##### 手順03
+#### 手順03
 ![管理画面操作03](images/api_setting_03.png)
-##### 手順04
+#### 手順04
 ![管理画面操作04](images/api_setting_04.png)
-##### 手順05
+#### 手順05
 ![管理画面操作05](images/api_setting_05.png)
-##### 手順06
+#### 手順06
 ![管理画面操作06](images/api_setting_06.png)
-##### 手順07
+#### 手順07
 ![管理画面操作07](images/api_setting_07.png)
-##### 手順08
+#### 手順08
 ![管理画面操作08](images/api_setting_08.png)
-##### 手順09
+#### 手順09
 ![管理画面操作09](images/api_setting_09.png)
-##### 手順10
+#### 手順10
 ![管理画面操作10](images/api_setting_10.png)
-##### 手順11
+#### 手順11
 ![管理画面操作11](images/api_setting_11.png)
-##### 手順12
+#### 手順12
 ![管理画面操作12](images/api_setting_12.png)
-##### 手順13
+#### 手順13
 ![管理画面操作13](images/api_setting_13.png)
-##### 手順14
+#### 手順14
 ![管理画面操作14](images/api_setting_14.png)
-##### 手順15
+#### 手順15
 ![管理画面操作15](images/api_setting_15.png)
-##### 手順16
+#### 手順16
 - 表示されたアクセストークンを保管する
