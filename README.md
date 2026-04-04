@@ -1,0 +1,82 @@
+# powerful2025 Shopifyテーマのカスタマイズ記録
+
+## 目的
+- Shopifyテーマのカスタマイズ記録を取り、顧客からの案件に備える
+
+## 開発履歴
+| 日付       | バージョン | 説明        |
+| ---------- | --------- | ----------- |
+| 2026/04/04 | 0.1.0     | README作成  |
+
+## 開発環境
+- Windows11
+- WSL(Ubuntu)
+- Shopify Cli
+- VSCode
+- Git
+
+## 開発手順
+### 開発手順1 (ローカルリポジトリ)
+- Github上でIssue作成しておくこと
+- WSL上で作業を行う
+
+```bash
+## 開発用ブランチ作成
+$ git checkout -b feature/*******
+
+## 開発用ブランチ確認
+$ git branch
+
+## ログイン
+$ shopify auth login
+
+## テーマの一覧 ※テーマIDを確認
+$ shopify theme list --store powerful2025.myshopify.com
+
+## 過去のプレビュー用テーマの削除
+$ shopify theme delete --theme テーマID --store powerful2025.myshopify.com
+
+## テーマのプル
+$ shopify theme pull --theme テーマID --store powerful2025.myshopify.com
+
+## テーマのカスタマイズ作業
+$ code .
+
+## 作業終了後にテーマをプレビュー
+$ shopify theme dev --theme テーマID --store powerful2025.myshopify.com
+
+## 修正済のテーマをShopifyにプッシュ
+$ shopify theme push --theme テーマID --store powerful2025.myshopify.com
+
+## ログアウト
+$ shopify auth logout
+
+## ステージング移行
+$ git add .
+
+## コミット ※11はissue番号
+$ git commit -m "feature/*******(#11)"
+
+## プッシュ
+$ git push origin feature/*******
+```
+
+### 開発手順2 (リモートリポジトリ)
+- PR作成
+- Mainブランチにマージ
+- 開発用ブランチ削除
+
+### 開発手順3 (ローカルリポジトリ)
+```bash
+## ブランチ切替
+$ git checkout main
+
+## ブランチ確認
+$ git branch
+
+## リモートリポジトリからプル
+$ git pull origin main
+
+## 開発用ブランチ削除
+$ git branch -d feature/*******
+```
