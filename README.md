@@ -4,9 +4,10 @@
 - Shopifyテーマのカスタマイズ記録を取り、顧客からの案件に備える
 
 ## 開発履歴
-| 日付       | バージョン | 説明        |
-| ---------- | --------- | ----------- |
-| 2026/04/04 | 0.1.0     | README作成  |
+| 日付       | バージョン | 説明                           |
+| ---------- | --------- | ----------------------------- |
+| 2026/04/04 | 0.2.0     | 売り切れバッジの角丸を四角に変更 |
+| 2026/04/04 | 0.1.0     | README作成                     |
 
 ## 開発環境
 - Windows11
@@ -19,6 +20,7 @@
 ### 開発手順1 (ローカルリポジトリ)
 - Github上でIssue作成しておくこと
 - WSL上で作業を行う
+- Shopify上でテーマ複製を行い、編集用(edit)と保存用(backup)を作成しておくこと
 
 ```bash
 ## 開発用ブランチ作成
@@ -36,16 +38,16 @@ $ shopify theme list --store powerful2025.myshopify.com
 ## 過去のプレビュー用テーマの削除
 $ shopify theme delete --theme テーマID --store powerful2025.myshopify.com
 
-## テーマのプル
+## 編集用テーマのプル
 $ shopify theme pull --theme テーマID --store powerful2025.myshopify.com
 
 ## テーマのカスタマイズ作業
 $ code .
 
-## 作業終了後にテーマをプレビュー
+## 作業終了後に編集用テーマをプレビュー
 $ shopify theme dev --theme テーマID --store powerful2025.myshopify.com
 
-## 修正済のテーマをShopifyにプッシュ
+## 修正済のテーマをShopifyにプッシュして顧客に修正済のテーマを確認してもらう
 $ shopify theme push --theme テーマID --store powerful2025.myshopify.com
 
 ## ログアウト
