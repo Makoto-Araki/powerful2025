@@ -8,6 +8,7 @@
   - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
   - show_vendor: {Boolean} Show the product vendor. Default: false
   - show_rating: {Boolean} Show the product rating. Default: false
+  - show_star: {Boolean} Add ★ to the head of the product name. Default: false
   - extend_height: {Boolean} Card height extends to available container space. Default: true (optional)
   - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
   - skip_styles: {Boolean} Don't include component styles. Useful when rendering multiple product cards in a loop. Default: false (optional)
@@ -120,7 +121,11 @@
                 class="full-unstyled-link"
                 aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
               >
-                ★{{ card_product.title | escape }}
+                {%- if show_star -%}
+                  ★ {{ card_product.title | escape }}
+                {%- else -%}
+                  {{ card_product.title | escape }}
+                {%- endif -%}
               </a>
             </h3>
           </div>
@@ -157,7 +162,11 @@
               class="full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
-              ★{{ card_product.title | escape }}
+              {%- if show_star -%}
+                ★ {{ card_product.title | escape }}
+              {%- else -%}
+                {{ card_product.title | escape }}
+              {%- endif -%}
             </a>
           </h3>
           <div class="card-information">

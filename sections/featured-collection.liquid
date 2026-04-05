@@ -125,6 +125,7 @@
                   show_secondary_image: section.settings.show_secondary_image,
                   show_vendor: section.settings.show_vendor,
                   show_rating: section.settings.show_rating,
+                  show_star: section.settings.show_star,
                   skip_styles: skip_card_product_styles,
                   section_id: section.id,
                   quick_add: section.settings.quick_add
@@ -154,10 +155,11 @@
               {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
               {% render 'card-product',
                 show_vendor: section.settings.show_vendor,
+                show_star: section.settings.show_star,
                 media_aspect_ratio: section.settings.image_ratio,
                 image_shape: section.settings.image_shape,
                 lazy_load: false,
-                placeholder_image: placeholder_image
+                placeholder_image: placeholder_image,
               %}
             </li>
           {%- endfor -%}
@@ -467,6 +469,13 @@
           "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_3"
         }
       ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_star",
+      "default": false,
+      "label": "商品名★付与",
+      "info": "商品名の冒頭に★を付与"
     },
     {
       "type": "header",
