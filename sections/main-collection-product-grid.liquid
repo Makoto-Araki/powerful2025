@@ -172,7 +172,7 @@
                     show_secondary_image: section.settings.show_secondary_image,
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
-                    show_star: section.settings.show_star,
+                    prefix_text: section.settings.prefix_text,
                     lazy_load: lazy_load,
                     skip_styles: skip_card_product_styles,
                     quick_add: section.settings.quick_add,
@@ -346,11 +346,10 @@
       ]
     },
     {
-      "type": "checkbox",
-      "id": "show_star",
-      "default": false,
-      "label": "商品名★付与",
-      "info": "商品名の冒頭に★を付与"
+      "type": "text",
+      "id": "prefix_text",
+      "label": "商品名の接頭辞",
+      "default": "★"
     },
     {
       "type": "header",
