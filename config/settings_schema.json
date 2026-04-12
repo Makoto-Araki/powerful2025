@@ -1263,6 +1263,24 @@
         "id": "sold_out_badge_color_scheme",
         "label": "t:settings_schema.badges.settings.sold_out_badge_color_scheme.label",
         "default": "scheme-3"
+      },
+      {
+        "type": "color_scheme",
+        "id": "new_badge_color_scheme",
+        "label": "t:settings_schema.badges.settings.new_badge_color_scheme.label",
+        "default": "scheme-6"
+      },
+      {
+        "type": "color_scheme",
+        "id": "limited_badge_color_scheme",
+        "label": "t:settings_schema.badges.settings.limited_badge_color_scheme.label",
+        "default": "scheme-7"
+      },
+      {
+        "type": "color_scheme",
+        "id": "recommend_badge_color_scheme",
+        "label": "t:settings_schema.badges.settings.recommend_badge_color_scheme.label",
+        "default": "scheme-8"
       }
     ]
   },
