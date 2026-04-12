@@ -119,6 +119,8 @@
       "description": "商品説明",
       "on_sale": "セール",
       "new": "新商品",
+      "limited": "限定品",
+      "recommend": "おすすめ",
       "product_variants": "商品バリエーション",
       "quantity": {
         "label": "数量",

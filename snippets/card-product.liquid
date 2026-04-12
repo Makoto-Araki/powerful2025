@@ -126,26 +126,50 @@
             </h3>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
-            {%- if card_product.available == false -%}
+            {% assign badge_count = 0 %}
+            {%- if card_product.available == false and badge_count < 2 -%}
               <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                id="Badge-SoldOut-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
               >
                 {{- 'products.product.sold_out' | t -}}
+                {%- assign badge_count = badge_count | plus: 1 -%}
               </span>
-            {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+            {%- endif -%}
+            {%- if card_product.compare_at_price > card_product.price and card_product.available and badge_count < 2 -%}
               <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                id="Badge-Sale-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
               >
                 {{- 'products.product.on_sale' | t -}}
+                {%- assign badge_count = badge_count | plus: 1 -%}
               </span>
-            {%- elsif card_product.tags contains 'new' and card_product.available -%}
+            {%- endif -%}
+            {%- if card_product.tags contains 'new' and card_product.available and badge_count < 2-%}
               <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+                id="Badge-New-{{ section_id }}-{{ card_product.id }}"
+                class="badge badge--bottom-left color-{{ settings.new_badge_color_scheme }}"
               >
                 {{- 'products.product.new' | t -}}
+                {%- assign badge_count = badge_count | plus: 1 -%}
+              </span>
+            {%- endif -%}
+            {%- if card_product.tags contains 'limited' and card_product.available and badge_count < 2 -%}
+              <span
+                id="Badge-Limited-{{ section_id }}-{{ card_product.id }}"
+                class="badge badge--bottom-left color-{{ settings.limited_badge_color_scheme }}"
+              >
+                {{- 'products.product.limited' | t -}}
+                {%- assign badge_count = badge_count | plus: 1 -%}
+              </span>
+            {%- endif -%}
+            {%- if card_product.tags contains 'recommend' and card_product.available and badge_count < 2 -%}
+              <span
+                id="Badge-Recommend-{{ section_id }}-{{ card_product.id }}"
+                class="badge badge--bottom-left color-{{ settings.recommend_badge_color_scheme }}"
+              >
+                {{- 'products.product.recommend' | t -}}
+                {%- assign badge_count = badge_count | plus: 1 -%}
               </span>
             {%- endif -%}
           </div>
