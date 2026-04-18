@@ -126,8 +126,14 @@
             </h3>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
+            {% comment %} 色スキーマ {% endcomment %}
+            {% assign badge_color_scheme = "scheme-3" %}
+            {% comment %} バッジ数 {% endcomment %}
             {% assign badge_count = 0 %}
-            {%- if card_product.available == false and badge_count < 2 -%}
+            {% comment %} タグ一覧 {% endcomment %}
+            {% assign badge_list = "new,limited,recommend" | split: "," %}
+            {% comment %} 売り切れ {% endcomment %}
+            {% if card_product.available == false %}
               <span
                 id="Badge-SoldOut-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
@@ -135,43 +141,25 @@
                 {{- 'products.product.sold_out' | t -}}
                 {%- assign badge_count = badge_count | plus: 1 -%}
               </span>
-            {%- endif -%}
-            {%- if card_product.compare_at_price > card_product.price and card_product.available and badge_count < 2 -%}
-              <span
-                id="Badge-Sale-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
-              >
-                {{- 'products.product.on_sale' | t -}}
-                {%- assign badge_count = badge_count | plus: 1 -%}
-              </span>
-            {%- endif -%}
-            {%- if card_product.tags contains 'new' and card_product.available and badge_count < 2-%}
-              <span
-                id="Badge-New-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.new_badge_color_scheme }}"
-              >
-                {{- 'products.product.new' | t -}}
-                {%- assign badge_count = badge_count | plus: 1 -%}
-              </span>
-            {%- endif -%}
-            {%- if card_product.tags contains 'limited' and card_product.available and badge_count < 2 -%}
-              <span
-                id="Badge-Limited-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.limited_badge_color_scheme }}"
-              >
-                {{- 'products.product.limited' | t -}}
-                {%- assign badge_count = badge_count | plus: 1 -%}
-              </span>
-            {%- endif -%}
-            {%- if card_product.tags contains 'recommend' and card_product.available and badge_count < 2 -%}
-              <span
-                id="Badge-Recommend-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.recommend_badge_color_scheme }}"
-              >
-                {{- 'products.product.recommend' | t -}}
-                {%- assign badge_count = badge_count | plus: 1 -%}
-              </span>
-            {%- endif -%}
+            {% else %}
+              {% comment %} タグ一覧のループ処理 {% endcomment %}
+              {% for tag in badge_list %}
+                {% case tag %}
+                  {% when "new" %}{% assign badge_color_scheme = "scheme-6" %}
+                  {% when "limited" %}{% assign badge_color_scheme = "scheme-7" %}
+                  {% when "recommend" %}{% assign badge_color_scheme = "scheme-8" %}
+                {% endcase %}
+                {% if card_product.tags contains tag and badge_count < 2 %}
+                  <span
+                    id="Badge-{{ tag }}-{{ section_id }}-{{ card_product.id }}"
+                    class="badge badge--bottom-left color-{{ badge_color_scheme }}"
+                  >
+                    {{ 'products.product.' | append: tag | t }}
+                    {% assign badge_count = badge_count | plus: 1 %}
+                  </span>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
           </div>
         </div>
       </div>
