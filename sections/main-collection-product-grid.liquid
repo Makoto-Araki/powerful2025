@@ -173,6 +173,8 @@
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
                     prefix_text: section.settings.prefix_text,
+                    badge_tags: section.settings.badge_tags,
+                    badge_colors: section.settings.badge_colors,
                     lazy_load: lazy_load,
                     skip_styles: skip_card_product_styles,
                     quick_add: section.settings.quick_add,
@@ -350,6 +352,18 @@
       "id": "prefix_text",
       "label": "商品名の接頭辞",
       "default": "★"
+    },
+    {
+      "type": "text",
+      "id": "badge_tags",
+      "label": "商品タグ(カンマ区切り)",
+      "default": "new,limit,recommend"
+    },
+    {
+      "type": "text",
+      "id": "badge_colors",
+      "label": "商品タグとバッジ色の紐付け",
+      "default": "new:scheme-6,limit:scheme-7,recommend:scheme-8"
     },
     {
       "type": "header",
