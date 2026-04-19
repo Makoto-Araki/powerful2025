@@ -1,0 +1,85 @@
+<style>
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
+  .popup.is-open {
+    display: flex;
+  }
+  .popup__content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+  }
+  #popup-close {
+    position: absolute;
+    top: 0.5rem; right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+</style>
+
+{% if section.settings.enable_popup %}
+  <div id="popup" class="popup">
+    <div class="popup__content">
+      <button id="popup-close">×</button>
+      <p>{{ section.settings.popup_text }}</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var popup = document.getElementById('popup');
+      var closeBtn = document.getElementById('popup-close');
+
+      if (!popup) return;
+
+      // 初回表示
+      if (!localStorage.getItem('popupShown')) {
+        popup.classList.add('is-open');
+        localStorage.setItem('popupShown', 'true');
+      }
+
+      // 閉じる
+      closeBtn.addEventListener('click', function () {
+        popup.classList.remove('is-open');
+      });
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "ポップアップ",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_popup",
+      "label": "ポップアップ表示",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "popup_text",
+      "label": "表示テキスト",
+      "default": "セール開催中"
+    }
+  ],
+  "presets": [
+    {
+      "name": "ポップアップ"
+    }
+  ]
+}
+{% endschema %}
