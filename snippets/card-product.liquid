@@ -9,6 +9,8 @@
   - show_vendor: {Boolean} Show the product vendor. Default: false
   - show_rating: {Boolean} Show the product rating. Default: false
   - prefix_text: {String} Add prefix_text to the head of the product name.
+  - badge_tags: {String} Product Tag List. Default: new,limit,recommend
+  - badge_colors: {String} Color Scheme associated with Product Tag. Default: new:scheme-6,limit:scheme-7,recommend:scheme-8
   - extend_height: {Boolean} Card height extends to available container space. Default: true (optional)
   - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
   - skip_styles: {Boolean} Don't include component styles. Useful when rendering multiple product cards in a loop. Default: false (optional)
@@ -126,13 +128,16 @@
             </h3>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
-            {% comment %} 色スキーマ {% endcomment %}
-            {% assign badge_color_scheme = "scheme-3" %}
+            {% comment %} 商品タグのリスト {% endcomment %}
+            {% assign badge_tags = section.settings.badge_tags | split: "," %}
+            
+            {% comment %} 商品タグとバッジ色の紐付け {% endcomment %}
+            {% assign badge_colors = section.settings.badge_colors | split: "," %}
+            
             {% comment %} バッジ数 {% endcomment %}
             {% assign badge_count = 0 %}
-            {% comment %} タグ一覧 {% endcomment %}
-            {% assign badge_list = "new,limited,recommend" | split: "," %}
-            {% comment %} 売り切れ {% endcomment %}
+            
+            {% comment %} 売り切れ時の商品タグ設定 {% endcomment %}
             {% if card_product.available == false %}
               <span
                 id="Badge-SoldOut-{{ section_id }}-{{ card_product.id }}"
@@ -142,13 +147,16 @@
                 {%- assign badge_count = badge_count | plus: 1 -%}
               </span>
             {% else %}
-              {% comment %} タグ一覧のループ処理 {% endcomment %}
-              {% for tag in badge_list %}
-                {% case tag %}
-                  {% when "new" %}{% assign badge_color_scheme = "scheme-6" %}
-                  {% when "limited" %}{% assign badge_color_scheme = "scheme-7" %}
-                  {% when "recommend" %}{% assign badge_color_scheme = "scheme-8" %}
-                {% endcase %}
+              
+              {% comment %} 商品タグ付与とバッジ色設定 {% endcomment %}
+              {% for tag in badge_tags %}
+                {% assign badge_color_scheme = "scheme-3" %}
+                {% for pair in badge_colors %}
+                  {% assign p = pair | split: ":" %}
+                  {% if p[0] == tag %}
+                    {% assign badge_color_scheme = p[1] %}
+                  {% endif %}
+                {% endfor %}                
                 {% if card_product.tags contains tag and badge_count < 2 %}
                   <span
                     id="Badge-{{ tag }}-{{ section_id }}-{{ card_product.id }}"
@@ -159,6 +167,7 @@
                   </span>
                 {% endif %}
               {% endfor %}
+              
             {% endif %}
           </div>
         </div>
