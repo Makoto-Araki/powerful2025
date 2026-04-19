@@ -123,16 +123,16 @@
                 class="full-unstyled-link"
                 aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
               >
-                {{ section.settings.prefix_text }} {{ card_product.title | escape }}
+                {{ prefix_text }} {{ card_product.title | escape }}
               </a>
             </h3>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
             {% comment %} 商品タグのリスト {% endcomment %}
-            {% assign badge_tags = section.settings.badge_tags | split: "," %}
+            {% assign badge_tags = badge_tags | split: "," %}
             
             {% comment %} 商品タグとバッジ色の紐付け {% endcomment %}
-            {% assign badge_colors = section.settings.badge_colors | split: "," %}
+            {% assign badge_colors = badge_colors | split: "," %}
             
             {% comment %} バッジ数 {% endcomment %}
             {% assign badge_count = 0 %}
@@ -186,7 +186,7 @@
               class="full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
-              {{ section.settings.prefix_text }} {{ card_product.title | escape }}
+              {{ prefix_text }} {{ card_product.title | escape }}
             </a>
           </h3>
           <div class="card-information">
